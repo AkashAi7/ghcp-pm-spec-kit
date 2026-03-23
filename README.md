@@ -1,203 +1,134 @@
 # GitHub Copilot PM Spec-Kit
-### From BRD to Full Project Artefacts — Powered by GitHub Copilot
 
-This workshop kit demonstrates how GitHub Copilot can accelerate project delivery by
-transforming a **Business Requirement Document (BRD)** into a complete suite of project
-artefacts in under an hour.
-
-> **Workshop participants:** See [SETUP.md](SETUP.md) for the full step-by-step setup guide.  
-> **Facilitators:** See the [Distribution Guide](#distributing-to-workshop-participants) at the bottom of this file.
+> Turn a Business Requirement Document (BRD) into a full set of project artefacts — in one chat session.
 
 ---
 
-## What This Kit Generates
+## What is this?
 
-| # | Artefact | Description |
-|---|---------|-------------|
-| 1 | **BRD Summary** | Parsed + structured requirements with gap analysis |
-| 2 | **Functional Specification (FSD)** | Screen-level requirements, user stories, acceptance criteria |
-| 3 | **Technical Design (TDD)** | Architecture, API catalogue, DB schema, Azure resource map |
-| 4 | **Work Breakdown Structure (WBS)** | Tasks × personas × effort estimates with Gantt input |
-| 5 | **Project Management Plan** | Gantt chart, Risk Register, Communication Plan |
-| 6 | **UI Prototype** | Mermaid flow + ASCII wireframes + clickable HTML |
-| 7 | **Persona TODO Items** | GitHub-Issues-ready tasks for 5 engineering personas |
+This is a hands-on lab kit. You bring a BRD (or use one of the samples provided), and GitHub Copilot generates everything your team needs to start a project:
 
----
-
-## Methodology: Spec-Kit Driven Development (SKDD)
-
-This kit implements **SKDD** — a delivery methodology where the BRD is the single source of truth and AI generates the full artefact chain (FSD → TDD → WBS → Tasks) automatically. See [SKDD.md](SKDD.md) for the full methodology guide.
+| # | What gets generated |
+|---|---------------------|
+| 1 | BRD Summary — structured requirements |
+| 2 | Functional Specification (FSD) |
+| 3 | Technical Design Document (TDD) |
+| 4 | Work Breakdown Structure (WBS) |
+| 5 | Project Management Plan (Gantt + Risks) |
+| 6 | UI Wireframes + HTML Prototype |
+| 7 | Persona TODO lists (ready for GitHub Issues) |
 
 ---
 
-## Custom Agent Mode
+## Before You Start
 
-A dedicated **PM Spec-Kit chat mode** is included. Once you open this folder in VS Code, you can switch Copilot Chat to the **PM Spec-Kit** mode — it becomes a specialist agent pre-loaded with all SKDD rules, the full command set, and workspace context.
-
-**How to activate:** In the Copilot Chat panel → click the mode selector → choose **PM Spec-Kit**.
-
----
-
-## Quick Start
-
-### Step 1 — Open this folder in VS Code
-```
-File → Open Folder → GHCP-Spec-Kit-PM
-```
-
-### Step 2 — Drop your BRD in `intake/`
-
-Supported formats:
-- `.md` or `.txt` — drop directly, Copilot reads natively
-- `.doc` / `.docx` — see `intake/README.md` for conversion instructions
-
-No BRD yet? Use `intake/sample-brd.md` to test the pipeline.
-
-### Step 3 — Open Copilot Chat
-
-Press `Ctrl+Alt+I` (or click the Copilot icon in the VS Code sidebar).
-
-### Step 4 — Run the Full Pipeline
-
-Paste this into Copilot Chat:
-
-```
-@workspace I have dropped my BRD in the intake/ folder.
-Please run the full artefact pipeline:
-1. Parse the BRD and save to output/
-2. Generate FSD using templates/fsd_template.md
-3. Generate TDD using templates/tdd_template.md
-4. Generate WBS using templates/wbs_template.md
-5. Generate PM Plan using templates/pm_plan_template.md
-6. Generate UI Prototype (wireframes + HTML) using templates/ui_prototype_template.md
-7. Generate Persona TODOs using templates/persona_todos_template.md
-Save each as a separate file in output/.
-```
-
-Or run each step individually using the prompt files in `.github/prompts/`.
+Make sure you have:
+- [VS Code](https://code.visualstudio.com/) installed
+- The **GitHub Copilot** extension installed and signed in
+- This folder open in VS Code (`File → Open Folder`)
 
 ---
 
-## Directory Structure
+## Step 1 — Pick a BRD
+
+Go to the `intake/` folder. Either:
+- Drop your own BRD file there (`.md` or `.txt`), or
+- Use one of the ready-made samples from `sample-brds/`
+
+> **Have a `.docx` file?** Open it in Word → Save As → Plain Text (`.txt`) → save it into `intake/`.
+
+Copy the BRD file you want to use into the `intake/` folder before continuing.
+
+---
+
+## Step 2 — Open Copilot Chat
+
+Press `Ctrl+Alt+I` or click the Copilot icon in the VS Code sidebar.
+
+Switch the chat mode to **PM Spec-Kit** using the mode selector at the top of the chat panel.
+
+---
+
+## Step 3 — Run the Pipeline
+
+Type this single command into the chat:
 
 ```
-📁 GHCP-Spec-Kit-PM/
-├── 📁 .github/
-│   ├── 📄 copilot-instructions.md     ← Loaded by Copilot automatically
-│   └── 📁 prompts/                    ← Step-by-step runnable prompts
-│       ├── 01-parse-brd.prompt.md
-│       ├── 02-generate-fsd.prompt.md
-│       ├── 03-generate-tdd.prompt.md
-│       ├── 04-generate-wbs.prompt.md
-│       ├── 05-generate-pm-plan.prompt.md
-│       ├── 06-generate-ui-prototype.prompt.md
-│       └── 07-generate-persona-todos.prompt.md
-│
-├── 📁 intake/                         ← DROP YOUR BRD HERE
-│   ├── README.md                      ← .doc conversion guide
-│   └── sample-brd.md                  ← Ready-to-use sample BRD
-│
-├── 📁 templates/                      ← Output structure templates
-│   ├── brd_template.md
-│   ├── fsd_template.md
-│   ├── tdd_template.md
-│   ├── wbs_template.md
-│   ├── pm_plan_template.md
-│   ├── ui_prototype_template.md
-│   ├── persona_todos_template.md
-│   ├── resource_plan_template.md
-│   └── service_scope_template.md
-│
-├── 📁 output/                         ← Generated artefacts land here
-│
-├── 📁 lab/                            ← Workshop lab guide
-│   ├── 00-overview.md                 ← Start here
-│   ├── 01-intake.md
-│   ├── 02-generate-fsd.md
-│   ├── 03-generate-tdd.md
-│   ├── 04-generate-wbs.md
-│   ├── 05-generate-pm-plan.md
-│   ├── 06-generate-ui-prototype.md
-│   └── 07-generate-persona-todos.md
-│
-├── 📁 memory/
-│   └── constitution.md                ← Extended AI rules
-│
-└── 📁 specs/
-    └── input_requirements.md          ← Legacy input (still supported)
+/pipeline
+```
+
+That's it. Copilot will read your BRD from `intake/` and generate all 7 artefacts one by one, saving each file into the `output/` folder.
+
+---
+
+## Step 4 — Review Your Outputs
+
+Open the `output/` folder. You will find one file per artefact, named clearly, e.g.:
+
+```
+output/
+  01-brd-summary-<project>.md
+  02-fsd-<project>.md
+  03-tdd-<project>.md
+  04-wbs-<project>.md
+  05-pm-plan-<project>.md
+  06-ui-wireframes-<project>.md
+  06-ui-prototype-<project>.html   ← open this in a browser
+  07-persona-todos-<project>.md
 ```
 
 ---
 
-## Engineering Personas
+## Run Steps One at a Time (Optional)
 
-Persona TODO items are generated for these five roles:
+If you prefer to go step by step, use these commands in chat:
 
-| Persona | Covers |
-|---------|--------|
-| Frontend Engineer | React/Angular/Vue, UI, accessibility, tests |
-| Backend Engineer | APIs, business logic, auth, background jobs |
-| Data Engineer | Azure Data Factory, Fabric, SQL/NoSQL, ETL |
-| Data Analyst | Power BI, DAX, KPIs, Fabric notebooks |
-| SRE / Cloud Engineer | Azure infra (Bicep), CI/CD, monitoring, security |
-
----
-
-## For Workshop Facilitators
-
-See `lab/00-overview.md` for the full facilitator guide including:
-- Timing breakdown (60-minute workshop plan)
-- Common participant issues and solutions
-- Tips for getting the best Copilot output
+| Command | What it does |
+|---------|--------------|
+| `/brd` | Parse and summarise the BRD |
+| `/fsd` | Generate the Functional Specification |
+| `/tdd` | Generate the Technical Design |
+| `/wbs` | Generate the Work Breakdown Structure |
+| `/plan` | Generate the PM Plan |
+| `/ui` | Generate UI wireframes + HTML prototype |
+| `/todos` | Generate persona TODO lists |
 
 ---
 
-## Distributing to Workshop Participants
+## Sample BRDs Included
 
-### Recommended: GitHub Template Repository
+Not sure what a BRD looks like? Several real-world samples are in `sample-brds/`:
 
-This is the cleanest way to give every participant their own isolated copy:
+| File | Project |
+|------|---------|
+| `Standard-BRD-001-ECommerce-Platform.md` | E-Commerce website |
+| `Standard-BRD-002-Healthcare-Patient-Portal.md` | Healthcare patient portal |
+| `Standard-BRD-003-IoT-Analytics-Dashboard.md` | IoT data dashboard |
+| `Standard-BRD-004-FinTech-Banking-Platform.md` | Banking / FinTech platform |
+| `Standard-BRD-005-ProjectManagement-SaaS.md` | Project management SaaS tool |
 
-**One-time setup (you do this once):**
+Copy any one of them into `intake/` to get started immediately.
 
-```bash
-# 1. Create a new GitHub repo for the kit
-gh repo create my-org/ghcp-pm-workshop --public
+---
 
-# 2. Push this project to it
-cd GHCP-Spec-Kit-PM
-git init
-git add .
-git commit -m "Initial workshop kit"
-git remote add origin https://github.com/my-org/ghcp-pm-workshop.git
-git push -u origin main
+## Folder Guide
 
-# 3. Mark it as a Template Repository:
-# On GitHub → Settings → General → tick "Template repository"
+```
+intake/          ← Put your BRD here
+sample-brds/     ← Sample BRDs to try out
+output/          ← Generated artefacts appear here
+templates/       ← Document templates used by Copilot
+lab/             ← Step-by-step lab guide (start with lab/00-overview.md)
 ```
 
-**What participants do:**
-1. Go to `https://github.com/my-org/ghcp-pm-workshop`
-2. Click **"Use this template"** → **"Create a new repository"**
-3. Clone their new repo → open in VS Code → done
-
-The `.gitignore` is set up so each person's `output/` files stay local and don't get pushed (clean separation).
-
 ---
 
-### Alternative: Share a ZIP
+## Need Help?
 
-If participants don't have GitHub accounts:
+- Lab walkthrough: [lab/00-overview.md](lab/00-overview.md)
+- Setup guide: [SETUP.md](SETUP.md)
+- Full command list: [COMMANDS.md](COMMANDS.md)
 
-```bash
-# From the project root — creates a clean zip excluding output files and git history
-git archive --format=zip --output=ghcp-pm-workshop.zip HEAD
-```
-
-Then share `ghcp-pm-workshop.zip` via Teams, email, or a shared drive.  
-Participants extract it, open the folder in VS Code, and follow [SETUP.md](SETUP.md).
-
----
 
 ### Pre-Workshop Checklist (send to participants 48h before)
 
