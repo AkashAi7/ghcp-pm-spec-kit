@@ -20,12 +20,65 @@ This is a hands-on lab kit. You bring a BRD (or use one of the samples provided)
 
 ---
 
-## Before You Start
+## Prerequisites — Install These First
 
-Make sure you have:
-- [VS Code](https://code.visualstudio.com/) installed
-- The **GitHub Copilot** extension installed and signed in
-- This folder open in VS Code (`File → Open Folder`)
+You need three things before starting. Install them in this order:
+
+### 1. Install Git
+Git is used to download (clone) this project to your computer.
+
+- Go to [https://git-scm.com/downloads](https://git-scm.com/downloads)
+- Download and install for your operating system
+- Accept all defaults during installation
+
+To verify it worked, open a terminal and run:
+```
+git --version
+```
+You should see something like `git version 2.x.x`.
+
+---
+
+### 2. Install VS Code
+VS Code is the editor you will use for this lab.
+
+- Go to [https://code.visualstudio.com/](https://code.visualstudio.com/)
+- Download and install for your operating system
+
+---
+
+### 3. Install the GitHub Copilot Extension
+
+> You need a GitHub account with an active Copilot licence (free tier works).
+
+1. Open VS Code
+2. Click the **Extensions** icon in the left sidebar (or press `Ctrl+Shift+X`)
+3. Search for **GitHub Copilot**
+4. Click **Install**
+5. When prompted, click **Sign in to GitHub** and follow the steps
+
+Once signed in, you will see the Copilot icon in the bottom status bar of VS Code.
+
+---
+
+## Getting the Project — Clone It
+
+Now download this project to your computer. Open a terminal (Command Prompt, PowerShell, or Terminal on Mac/Linux) and run:
+
+```bash
+git clone https://github.com/AkashAi7/ghcp-pm-spec-kit.git
+```
+
+This creates a folder called `ghcp-pm-spec-kit` wherever you ran the command.
+
+Then open it in VS Code:
+
+```bash
+cd ghcp-pm-spec-kit
+code .
+```
+
+> **What does `code .` do?** It opens the current folder in VS Code. If it doesn't work, open VS Code manually and go to `File → Open Folder` → select the `ghcp-pm-spec-kit` folder.
 
 ---
 
@@ -43,9 +96,13 @@ Copy the BRD file you want to use into the `intake/` folder before continuing.
 
 ## Step 2 — Open Copilot Chat
 
-Press `Ctrl+Alt+I` or click the Copilot icon in the VS Code sidebar.
+Press `Ctrl+Alt+I` or click the Copilot icon in the left sidebar of VS Code.
 
-Switch the chat mode to **PM Spec-Kit** using the mode selector at the top of the chat panel.
+The Copilot Chat panel will open on the right (or bottom) side of VS Code.
+
+At the **top of the chat panel**, you will see a mode/agent selector dropdown. Click it and choose **PM Spec-Kit**. This loads all the PM rules and commands automatically.
+
+> **Don't see PM Spec-Kit in the list?** Make sure you opened the `ghcp-pm-spec-kit` folder in VS Code (not just a single file). The custom agent is tied to this workspace.
 
 ---
 
