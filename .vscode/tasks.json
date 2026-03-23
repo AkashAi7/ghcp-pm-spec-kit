@@ -1,0 +1,149 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PM: Run Full Pipeline",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/00-run-full-pipeline.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Runs all 7 artefact steps automatically from BRD → Persona TODOs"
+    },
+    {
+      "label": "PM: Step 1 — Parse BRD",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/01-parse-brd.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Parse and structure BRD from intake/"
+    },
+    {
+      "label": "PM: Step 2 — Generate FSD",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/02-generate-fsd.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate Functional Specification Document"
+    },
+    {
+      "label": "PM: Step 3 — Generate TDD",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/03-generate-tdd.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate Technical Design Document"
+    },
+    {
+      "label": "PM: Step 4 — Generate WBS",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/04-generate-wbs.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate Work Breakdown Structure"
+    },
+    {
+      "label": "PM: Step 5 — Generate PM Plan",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/05-generate-pm-plan.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate PM Plan (Gantt, Risk, Comms)"
+    },
+    {
+      "label": "PM: Step 6 — Generate UI Prototype",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/06-generate-ui-prototype.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate UI wireframes and HTML prototype"
+    },
+    {
+      "label": "PM: Step 7 — Generate Persona TODOs",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/07-generate-persona-todos.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate per-persona GitHub-ready TODO lists"
+    },
+    {
+      "label": "PM: Sprint Plan",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/08-sprint-plan.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate sprint-by-sprint plan from WBS"
+    },
+    {
+      "label": "PM: Risk Deep Dive",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/09-risk-deep-dive.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate full risk register with heat map"
+    },
+    {
+      "label": "PM: Weekly Status Report",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/10-status-report.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate weekly RAG status report"
+    },
+    {
+      "label": "PM: Daily Standup Notes",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/11-standup-notes.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate today's standup for all personas"
+    },
+    {
+      "label": "PM: Sprint Retrospective",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/12-retrospective.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate sprint retrospective document"
+    },
+    {
+      "label": "PM: Change Request",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/13-change-request.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Raise a formal change request with impact analysis"
+    },
+    {
+      "label": "PM: Release Notes",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/14-release-notes.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate release notes for a version"
+    },
+    {
+      "label": "PM: Handover Document",
+      "type": "shell",
+      "command": "code",
+      "args": ["--open-url", "vscode://GitHub.copilot/runPrompt?prompt=.github/prompts/15-handover.prompt.md"],
+      "group": "none",
+      "presentation": { "reveal": "silent", "panel": "shared" },
+      "detail": "Generate project handover / closure document"
+    }
+  ]
+}

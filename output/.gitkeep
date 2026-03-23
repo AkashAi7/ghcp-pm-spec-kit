@@ -1,0 +1,3 @@
+# This file keeps the output/ folder tracked by git.
+# Your generated artefacts will appear here after running the pipeline.
+# They are excluded by .gitignore so every participant starts fresh.

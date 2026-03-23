@@ -1,0 +1,50 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Generated workshop outputs — each participant produces their own
+# The output/ folder is tracked but the generated files inside are not.
+# This means every participant starts with a clean output/ folder.
+# ──────────────────────────────────────────────────────────────────────────────
+output/*.md
+output/*.html
+output/*.docx
+output/*.pdf
+output/*.csv
+output/*.xlsx
+
+# Keep the folder itself (via .gitkeep) and the guide README
+!output/.gitkeep
+!output/README.md
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Participant BRDs — each person uses their own; don't commit others' BRDs
+# Comment this out if you want to commit the sample BRD only
+# ──────────────────────────────────────────────────────────────────────────────
+intake/*.md
+intake/*.txt
+intake/*.doc
+intake/*.docx
+
+# Keep the sample BRD and README
+!intake/sample-brd.md
+!intake/README.md
+
+# ──────────────────────────────────────────────────────────────────────────────
+# OS & Editor noise
+# ──────────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# VS Code workspace settings (keep .vscode/tasks.json — it's part of the kit)
+.vscode/settings.json
+.vscode/*.code-workspace
+
+# Node / npm (in case anyone runs a local preview server)
+node_modules/
+npm-debug.log*
+
+# Python (in case anyone converts .docx via python-docx)
+__pycache__/
+*.py[cod]
+.env
