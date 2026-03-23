@@ -106,15 +106,19 @@ At the **top of the chat panel**, you will see a mode/agent selector dropdown. C
 
 ---
 
-## Step 3 — Run the Pipeline
+## Step 3 — Run Everything with One Command
 
-Type this single command into the chat:
+In the Copilot Chat panel, type this single command and press Enter:
 
 ```
 /pipeline
 ```
 
-That's it. Copilot will read your BRD from `intake/` and generate all 7 artefacts one by one, saving each file into the `output/` folder.
+> **That's the "run all" command.** This one command triggers all 7 steps automatically:
+> Parse BRD → FSD → TDD → WBS → PM Plan → UI Wireframes → Persona TODOs
+>
+> Copilot will read your BRD from `intake/` and generate each artefact one by one,
+> saving them into the `output/` folder. No other input needed from you.
 
 ---
 
