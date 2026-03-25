@@ -91,7 +91,13 @@ Files created in output/:
   06-ui-prototype-<project-name>.html
   07-persona-todos-<project-name>.md
 
-Next steps:
+Next steps — pick your role and start building:
+  → /dev frontend      — scaffold components, routes, and tests (Frontend Engineer)
+  → /dev backend       — scaffold APIs, services, and repositories (Backend Engineer)
+  → /dev data-engineer — scaffold pipelines, schemas, and notebooks (Data Engineer)
+  → /dev data-analyst  — scaffold DAX measures, report pages, KPIs (Data Analyst)
+  → /dev sre           — scaffold Bicep, GitHub Actions, and alerts (SRE / Cloud Engineer)
+
   → Run /sprint to generate sprint plans from the WBS
   → Run /status to create a project status report
   → Run /risks for a deep risk analysis

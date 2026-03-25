@@ -52,6 +52,32 @@ the `.github/copilot-instructions.md` file automatically.
 | [Lab 5](05-generate-pm-plan.md) | Generate the PM Plan | 8 min |
 | [Lab 6](06-generate-ui-prototype.md) | Generate UI Prototype | 8 min |
 | [Lab 7](07-generate-persona-todos.md) | Generate Persona TODOs | 8 min |
+| [Lab 8](08-persona-wise-development.md) | From User Stories to Code — Persona-Wise Dev | 20–30 min |
+
+> **Lab 8** is the implementation lab. After the pipeline generates all artefacts,
+> each team member picks their persona and uses Copilot to implement actual code
+> from their TODO list — guided by the persona instruction files in `persona-instructions/`.
+
+---
+
+## Persona Instruction Files
+
+The `persona-instructions/` folder contains a custom Copilot instruction file for each engineering role.
+These files define tech stack defaults, code conventions, testing requirements, and implementation prompts
+specific to each persona. They are used in **Lab 8** but can be used at any time during development.
+
+| File | Persona |
+|------|---------|
+| `persona-instructions/frontend-engineer.instructions.md` | Frontend Engineer |
+| `persona-instructions/backend-engineer.instructions.md` | Backend Engineer |
+| `persona-instructions/data-engineer.instructions.md` | Data Engineer |
+| `persona-instructions/data-analyst.instructions.md` | Data Analyst |
+| `persona-instructions/sre-cloud-engineer.instructions.md` | SRE / Cloud Engineer |
+
+To use one, reference it in Copilot Chat:
+```
+#file:persona-instructions/frontend-engineer.instructions.md
+```
 
 ---
 
